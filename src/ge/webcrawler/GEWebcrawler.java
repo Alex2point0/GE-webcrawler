@@ -126,8 +126,7 @@ class Crawl implements Runnable {
         ge.success.add(page); //if crawl() is called, a page was successfully visited for the first time
         JSONArray links = ge.jsonMap.get(page); //links array for page key
 
-        for (Object i : links){ //loops through pages in links array
-            
+        for (Object i : links){ //loops through pages in links array            
             if (!ge.jsonMap.containsKey(i)) ge.error.add(i); //if page does not exist, add to error
             else if (!ge.success.contains(i)) 
                 try {                             
