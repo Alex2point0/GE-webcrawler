@@ -52,11 +52,10 @@ public class GEWebcrawler  {
         crawl.join();
         
         System.out.println("Success:\n" + ge.getSuccess());
-
-        
+       
         System.out.println("Skipped: \n" + ge.getSkipped());
         
-        System.out.println("Eror: \n" + ge.getError());
+        System.out.println("Error: \n" + ge.getError());
     }
          
     GEWebcrawler() throws IOException, FileNotFoundException, ParseException{        
