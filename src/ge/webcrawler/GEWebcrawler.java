@@ -50,9 +50,13 @@ public class GEWebcrawler  {
         Thread crawl = new Thread(new Crawl(randomPage, ge)); //begin first crawl thread                    
         crawl.start();
         crawl.join();
-        ge.getSuccess();
-        ge.getSkipped();
-        ge.getError();           
+        
+        System.out.println("Success:\n" + ge.getSuccess());
+
+        
+        System.out.println("Skipped: \n" + ge.getSkipped());
+        
+        System.out.println("Eror: \n" + ge.getError());
     }
          
     GEWebcrawler() throws IOException, FileNotFoundException, ParseException{        
@@ -94,16 +98,16 @@ public class GEWebcrawler  {
         }           
     }
     
-    void getError(){
-        System.out.println(error);
+    List getError(){
+        return this.error;
     }
     
-    void getSkipped(){
-        System.out.println(skipped);
+    List getSkipped(){
+        return this.skipped;
     }
     
-    void getSuccess(){
-        System.out.println(success);
+    List getSuccess(){
+        return this.success;
     }
        
 }
