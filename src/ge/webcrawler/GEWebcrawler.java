@@ -47,7 +47,7 @@ public class GEWebcrawler  {
         // TODO code application logic here                              
         GEWebcrawler ge = new GEWebcrawler();
         Object randomPage = ge.jsonMap.keySet().toArray()[new Random().nextInt(ge.jsonMap.keySet().toArray().length)]; //choose a random page to start crawl
-        Thread crawl = new Thread(new Crawl(randomPage, ge)); //begin first crawl thread                    
+        Thread crawl = new Thread(new Crawl(randomPage, ge)); //begin first crawl thread, put "page-01" or "page-99" etc for specific start pages                    
         crawl.start();
         crawl.join();
         
